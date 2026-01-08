@@ -45,7 +45,7 @@ export default defineConfig({
             { label: "Local Development", link: "/development/local-dev/" },
           ],
         },
-        { label: "Contributing", link: "#contributing" },
+        { label: "Contributing", link: "/contributing" },
         { label: "Roadmap", link: "#roadmap" },
       ],
     }),
