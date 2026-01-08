@@ -1,0 +1,18 @@
+@import "tailwindcss/theme.css" layer(theme);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply m-0;
+}
+
+a {
+  @apply text-stone-100 hover:text-stone-300 transition-colors duration-300 no-underline;
+}
+
+p {
+  @apply m-0;
+}

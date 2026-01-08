@@ -1,3 +1,9 @@
+---
+import "../styles/global.css";
+import "../styles/landing.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -7,7 +13,9 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>MYCO-1</title>
 	</head>
-	<body>
-		<slot />
+	<body class="m-0 bg-stone-950 text-gray-100">
+    <Header />
+		  <slot /> 
+    <Footer />
 	</body>
 </html>

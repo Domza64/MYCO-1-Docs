@@ -1,0 +1,99 @@
+---
+const roadmap = [
+  {
+    phase: 'Pre-alpha',
+    title: 'Pre Alpha',
+    status: 'In Progress',
+    statusClass: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+    items: [
+      'Multi-user accounts',
+      'Library scanning & indexing',
+      'Metadata extraction',
+      'Playlist management',
+      'Playback & web player',
+      'All basic music player features',
+    ],
+  },
+  {
+    phase: 'Alpha',
+    title: 'Core Streaming',
+    status: 'Soon',
+    statusClass: 'bg-stone-700/50 text-stone-300 border-stone-600',
+    items: [
+      'Just a stable "production" ready build',
+    ],
+  },
+  {
+    phase: 'Version 1',
+    title: 'AI & Discovery',
+    status: 'Planned',
+    statusClass: 'bg-stone-700/50 text-stone-300 border-stone-600',
+    items: [
+      'Vector embeddings (ChromaDB)',
+      'Similar song recommendations',
+      'Auto-generated playlists',
+      'Mood & style-based discovery',
+    ],
+  },
+  {
+    phase: 'Version 2',
+    title: 'Polish',
+    status: 'Future',
+    statusClass: 'bg-stone-800/50 text-stone-400 border-stone-700',
+    items: [
+      'UI refinements & animations',
+      'Cross-device playback sync and WebSocket-based remote control',
+      'User-driven UX improvements',
+    ],
+  },
+  {
+    phase: 'Phase 3',
+    title: 'Power Features',
+    status: 'Future',
+    statusClass: 'bg-stone-800/50 text-stone-400 border-stone-700',
+    items: [
+      'Native desktop app (Tauri)',
+      'Native mobile app',
+      'Metadata editing',
+      'More Advanced library tools',
+    ],
+  },
+];
+---
+
+<section class="container mx-auto">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-bold pb-2">The Journey Ahead</h2>
+    <p class="text-stone-400 text-lg">
+      Building the future of personal music streaming
+    </p>
+  </div>
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    {roadmap.map((step) => (
+      <div class="bg-white/3 rounded-xl p-6 border border-white/10">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <span class="text-rose-500 font-semibold">{step.phase}</span>
+            <h3 class="text-xl font-bold">{step.title}</h3>
+          </div>
+
+          <span
+            class={`px-3 py-1 rounded-full text-xs font-medium border ${step.statusClass}`}
+          >
+            {step.status}
+          </span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-3">
+          {step.items.map((item) => (
+            <div class="relative pl-4 py-2 rounded-md bg-white/3 text-stone-400 text-sm">
+              <span class="absolute left-0 top-0 bottom-0 w-0.5 bg-rose-500/80 rounded-full"></span>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
