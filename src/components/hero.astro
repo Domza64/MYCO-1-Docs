@@ -1,31 +1,32 @@
-<section class="flex flex-col xl:flex-row xl:items-center items-start md:text-left text-center gap-16">
+<section class="flex flex-col lg:flex-row lg:items-center items-start md:text-left text-center gap-16">
     <!-- Text Content -->
     <div class="max-w-3xl">
-        <div class="inline-flex px-4 py-1.5 bg-rose-500/10 border border-rose-500/20 rounded-full mb-6">
+        <div class="inline-flex px-4 py-1.5 bg-rose-500/10 border border-rose-500/20 rounded-full mb-8">
             <span class="text-rose-400 text-sm font-medium">
                 Open Source • Self-Hosted • Privacy-First
             </span>
         </div>
 
         <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold leading-tight pb-6">
-            Your Music,
+            Rediscover
             <br />
-            <span class="text-rose-500">Your Control</span>
+            <span class="text-rose-500 xl:text-8xl text-7xl">Your Music</span>
         </h1>
 
         <p class="text-lg md:text-xl text-stone-300 leading-relaxed pb-10">
-            Transform your local music collection into a beautiful streaming service.
-            Self-contained, privacy-focused, and built for music lovers who value ownership.
+            A beautiful, open-source player that turns your music folder into a streaming service. <br>
+            <span class="italic text-stone-400/90">Almost</span> every feature you'd expect, intelligent recommendations, and playlists that build 
+            themselves—enjoy your collection anywhere, no fees.
         </p>
 
         <div class="flex flex-wrap md:justify-start justify-center gap-4">
-            <a
-                href="/getting-started/installation"
-                class="px-6 py-3.5 bg-rose-600 rounded-lg font-semibold
-                    hover:shadow-lg hover:shadow-rose-500/40 hover:text-stone-100! transition-all duration-300 hover:scale-105"
-            >
-                Start Streaming
-            </a>
+        <a 
+            href="/getting-started/installation"
+            class="px-6 py-3 bg-white/5 border hover:shadow-rose-500 shadow-sm border-rose-500 
+            rounded-lg font-semibold hover:text-stone-100! hover:scale-105 transition-all duration-300 flex items-center"
+        >
+            Get Started
+        </a>
 
             <button
                 disabled
@@ -39,22 +40,63 @@
             <a
                 href="https://github.com/domza64/myco-1"
                 class="px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10
-                    rounded-lg font-semibold transition-all duration-300 hover:text-stone-100! hover:scale-105"
+                    rounded-lg font-semibold transition-all duration-300 hover:text-stone-100! hover:scale-105 flex gap-2 items-center"
             >
-                View on GitHub
+                <img src="/icons/gh.svg" alt="GitHub Icon" class="w-6" /> View on GitHub
             </a>
         </div>
     </div>
 
     <!-- Image Preview -->
-    <div
-        class="hidden xl:block max-w-2xl w-full overflow-hidden rounded-3xl
-                ring-1 ring-white/10"
-    >
-        <img
-        src="/demo.png"
-        alt="Application preview"
-        class="w-full h-auto object-contain"
-        />
+    <div class="md:max-w-sm max-w-xs mx-auto w-full z-10 relative overflow-hidden">
+        <div id="mockup-carousel" class="relative w-full h-auto">
+            <img
+            src="/mockup-1.png"
+            alt="Application preview"
+            class="mockup-slide w-full h-auto object-contain absolute inset-0 opacity-0 transition-opacity duration-700"
+            data-index="0"
+            />
+            <img
+            src="/mockup-2.png"
+            alt="Application preview"
+            class="mockup-slide w-full h-auto object-contain absolute inset-0 opacity-0 transition-opacity duration-700"
+            data-index="1"
+            />
+            <img
+            src="/mockup-3.png"
+            alt="Application preview"
+            class="mockup-slide w-full h-auto object-contain opacity-100 transition-opacity duration-700"
+            data-index="2"
+            />
+        </div>
     </div>
+    <script>
+        let currentSlide = 2; // Start with mockup-3
+        const slides = document.querySelectorAll('.mockup-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index: number) {
+            slides.forEach((slide, i) => {
+                const htmlSlide = slide as HTMLElement;
+                if (i === index) {
+                    htmlSlide.style.opacity = '1';
+                    htmlSlide.style.zIndex = '10';
+                } else {
+                    htmlSlide.style.opacity = '0';
+                    htmlSlide.style.zIndex = '1';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Initial display
+        showSlide(currentSlide);
+
+        // Auto-rotate every 8 seconds
+        setInterval(nextSlide, 8000);
+    </script>
 </section>
