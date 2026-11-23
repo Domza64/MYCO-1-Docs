@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  variant?: "primary" | "secondary" | "disabled" | "ghost";
+  size?: "sm" | "md";
+  href?: string;
+  class?: string;
+  icon?: string;
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  icon,
+  class: className = "",
+} = Astro.props;
+
+const styles = {
+  primary: "bg-rose-500 text-black hover:bg-rose-400",
+  secondary: "bg-stone-300 text-black hover:bg-stone-200",
+  disabled: "bg-stone-500 text-black hover:cursor-not-allowed",
+  ghost: "text-stone-200 hover:bg-stone-600/40",
+};
+
+const sizes = {
+  sm: "sm:text-sm text-xs px-2 sm:px-4 py-2.5",
+  md: "text-md sm:px-6 px-5 py-2.5",
+};
+
+const classes = `
+  flex justify-center items-center
+  font-semibold gap-2 rounded
+  transition-colors max-w-max
+  ${sizes[size]}
+  ${styles[variant]}
+  ${className}
+`;
+---
+
+{href ? (
+  <a href={href} class={classes}>
+    {icon && <Icon name={icon} size={20} />}
+    <slot />
+  </a>
+) : (
+  <button class={classes}>
+    {icon && <Icon name={icon} size={20} />}
+    <slot />
+  </button>
+)}

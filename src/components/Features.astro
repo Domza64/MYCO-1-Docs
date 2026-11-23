@@ -1,64 +1,59 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const features = [
   {
-    title: 'Self-Hosted',
-    description: 'One command Docker deployment. Your server, your rules.',
-    icon: "/icons/server.svg",  
+    title: "Self-Hosted",
+    description:
+      "Your server, your music, your rules. No ads, no tracking, none of that s**t.",
+    icon: "lucide:server",
   },
   {
-    title: 'Privacy First',
-    description: 'Your music never leaves your infrastructure. Zero tracking.',
-    icon: "/icons/safe.svg",
+    title: "Enjoy Your Music",
+    description:
+      "Just point MYC0-1 at your libray and let it do its thing. Sit back and enjoy the music.",
+    icon: "lucide:disc-3",
   },
   {
-    title: 'Smart Indexing',
-    description: 'Automatic metadata extraction from ID3 tags and audio files.',
-    icon: "/icons/indexing.svg",  
+    title: "Playlists",
+    description: "Um, You can create playlists! Wow!",
+    icon: "lucide:list-music",
   },
   {
-    title: 'Instant Search',
-    description: 'Blazing-fast search that finds any track the moment you start typing.',
-    icon: "/icons/search.svg",
+    title: "Search",
+    description:
+      "Search your library by authors, albums, titles... It's just a search function.",
+    icon: "lucide:search",
   },
   {
-    title: 'Playlists',
-    description: 'Create and manage custom playlists for every mood.',
-    icon: "/icons/list.svg",  
+    title: "Multi User",
+    description:
+      "Create an accounts for a few friends you might have. Make everyone listen to the best stuff.",
+    icon: "lucide:users",
   },
   {
-    title: 'AI-Powered (Soon)',
-    description: 'Smart recommendations and auto-playlists coming soon.',
-    icon: "/icons/ai.svg",
+    title: "huh?",
+    description:
+      "Where's the 6th option? There's much more stuff comming... one undefined day!",
+    icon: "lucide:package-question-mark",
   },
-  {
-    title: 'Multi-User Access',
-    description: 'Create multiple users, manage permissions, and share music securely.',
-    icon: '/icons/users.svg',
-  }
 ];
 ---
 
-<section class="container mx-auto">
-  <div class="text-center mb-10">
-    <h2 class="text-4xl font-bold pb-2">Everything You Need</h2>
-    <p class="text-stone-400 text-lg">
-      Powerful features wrapped in a beautiful interface
+<section class="mx-auto">
+  <div class="text-center mb-6">
+    <h2>What's this?</h2>
+    <p class="text-stone-400 sm:text-[17px] text-sm">
+      Just a simple music streaming app with all the basic features that you
+      might expect.
     </p>
   </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {features.map((feature) => (
-      <div
-        class="group bg-linear-to-br from-white/5 to-white/2
-               rounded-xl p-6 border border-white/10
-               hover:border-rose-500/30 transition-all duration-300 hover:scale-105"
-      >
-        <div
-          class="w-12 h-12 bg-linear-to-br from-rose-500/20 to-rose-600/10
-                 rounded-lg flex items-center justify-center mb-4
-                 group-hover:from-rose-500/30 group-hover:to-rose-600/20 transition-all"
-        >
-          <img src={feature.icon} alt="Icon" class="w-6 h-6">
+      <div class="bg-stone-900 rounded sm:p-6 p-4 border-stone-800">
+        <div class="w-12 h-12 bg-stone-700/50 rounded flex items-center justify-center mb-4">
+          <Icon name={feature.icon} size={24} class="text-stone-400" />
         </div>
 
         <h3 class="text-lg font-semibold mb-2">{feature.title}</h3>

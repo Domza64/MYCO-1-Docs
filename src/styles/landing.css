@@ -6,11 +6,15 @@ h3,
 h4,
 h5,
 h6 {
-  @apply m-0;
+  @apply m-0 text-stone-200;
+}
+
+h2 {
+  @apply sm:text-3xl text-xl font-bold sm:pb-2 pb-1
 }
 
 a {
-  @apply text-stone-100 hover:text-stone-300 transition-colors duration-300 no-underline;
+  @apply no-underline;
 }
 
 p {

@@ -4,6 +4,8 @@ import starlight from "@astrojs/starlight";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -49,6 +51,7 @@ export default defineConfig({
         { label: "Roadmap", link: "#roadmap" },
       ],
     }),
+    icon(),
   ],
 
   vite: {

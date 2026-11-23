@@ -14,12 +14,11 @@ description: Install and run MYC0-1 using Docker.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/domza64/myc0-1.git
+   git clone https://github.com/Domza64/MYC0-1
    cd myc0-1
    ```
 
 2. Edit `docker-compose.yml` and set:
-
    - Path to your music folder
    - Path where MYC0-1 can store its data
 
